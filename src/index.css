@@ -5,7 +5,50 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-slate-950 text-slate-200 antialiased selection:bg-amber-500/30 font-sans;
+    @apply antialiased;
+    background-color: #06080f;
+    color: #e2ddd6;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    selection-color: rgba(212, 168, 83, 0.35);
+  }
+
+  ::selection {
+    background: rgba(212, 168, 83, 0.3);
+  }
+
+  .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .bg-white\/8  { background-color: rgba(255,255,255,0.08); }
+  .bg-white\/4  { background-color: rgba(255,255,255,0.04); }
+  .bg-amber-500\/8  { background-color: rgba(245,158,11,0.08); }
+
+  .border-white\/8  { border-color: rgba(255,255,255,0.08); }
+  .border-white\/6  { border-color: rgba(255,255,255,0.06); }
+  .border-white\/5  { border-color: rgba(255,255,255,0.05); }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Gradient text helper */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #f5edd8 30%, #d4a853 65%, #f5edd8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
