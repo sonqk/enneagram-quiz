@@ -420,13 +420,359 @@ body {
   font-style: italic;
 }
 
+/* ════════════════════════════════════════
+   DEEP-DIVE SECTIONS
+   ════════════════════════════════════════ */
+
+/* ─── Section Divider ─── */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0 16px;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,170,100,0.25));
+}
+
+.section-divider::after {
+  background: linear-gradient(90deg, rgba(200,170,100,0.25), transparent);
+}
+
+.section-divider-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #c8aa64;
+  white-space: nowrap;
+}
+
+/* ─── Deep Card shared ─── */
+.deep-card {
+  margin-bottom: 14px;
+}
+
+.deep-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.deep-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.deep-card-title > span:nth-child(2) {
+  font-size: 17px;
+  font-weight: 400;
+  color: #f0e8d8;
+  letter-spacing: 0.5px;
+}
+
+.deep-en {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: #5a4a3a;
+  font-style: italic;
+  margin-left: 2px;
+}
+
+.deep-intro-text {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #9a8a7a;
+  margin-bottom: 18px;
+  font-style: italic;
+}
+
+/* ─── Core Motivations Grid ─── */
+.motivation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.motiv-item {
+  padding: 14px 16px;
+  border-radius: 6px;
+  border: 1px solid;
+}
+
+.motiv-item.fear    { border-color: rgba(231,76,60,0.3);   background: rgba(231,76,60,0.06); }
+.motiv-item.desire  { border-color: rgba(46,204,113,0.3);  background: rgba(46,204,113,0.06); }
+.motiv-item.vice    { border-color: rgba(155,89,182,0.3);  background: rgba(155,89,182,0.06); }
+.motiv-item.virtue  { border-color: rgba(52,152,219,0.3);  background: rgba(52,152,219,0.06); }
+
+.motiv-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #7a6a5a;
+  margin-bottom: 6px;
+}
+
+.motiv-item.fear    .motiv-label { color: #e74c3c88; }
+.motiv-item.desire  .motiv-label { color: #2ecc7188; }
+.motiv-item.vice    .motiv-label { color: #9b59b688; }
+.motiv-item.virtue  .motiv-label { color: #3498db88; }
+
+.motiv-value {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #c0b0a0;
+}
+
+/* ─── Wings ─── */
+.wings-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.wing-card {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 16px;
+  background: rgba(255,255,255,0.02);
+  position: relative;
+  transition: border-color 0.2s;
+}
+
+.wing-badge {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.wing-emoji {
+  font-size: 28px;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.wing-type-label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #c0b0a0;
+  margin-bottom: 8px;
+}
+
+.wing-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #7a6a5a;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.wing-score-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+}
+
+.wing-score-label { color: #5a4a3a; }
+.wing-score-val   { color: #9a8a7a; font-weight: 500; }
+
+/* ─── Center of Intelligence ─── */
+.center-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.center-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid;
+  flex: 1;
+  min-width: 180px;
+}
+
+.center-icon { font-size: 28px; line-height: 1; }
+
+.center-name {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.center-en {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: #5a4a3a;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.center-theme-pill {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.center-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #b0a090;
+  margin-bottom: 16px;
+}
+
+.center-traits {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.center-trait {
+  font-size: 14px;
+  color: #a0909a;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid;
+  background: rgba(255,255,255,0.02);
+}
+
+.center-types-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.center-type-pill {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  color: #7a6a5a;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.center-type-active {
+  font-weight: 600;
+  color: #111;
+}
+
+/* ─── Growth & Stress Arrows ─── */
+.arrow-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.arrow-card {
+  padding: 16px 18px;
+  border-radius: 6px;
+  border: 1px solid;
+}
+
+.growth-card {
+  border-color: rgba(46,204,113,0.25);
+  background: rgba(46,204,113,0.05);
+}
+
+.stress-card {
+  border-color: rgba(231,76,60,0.25);
+  background: rgba(231,76,60,0.05);
+}
+
+.arrow-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.arrow-emoji { font-size: 24px; line-height: 1.2; flex-shrink: 0; }
+
+.arrow-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.growth-label { color: #2ecc71; }
+.stress-label { color: #e74c3c; }
+
+.arrow-type-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.arrow-from-badge,
+.arrow-to-badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.arrow-dir {
+  color: #5a4a3a;
+  font-size: 16px;
+}
+
+.arrow-note {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #a09080;
+  font-style: italic;
+  border-left: 2px solid rgba(255,255,255,0.08);
+  padding-left: 12px;
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 520px) {
-  .two-col {
+  .two-col,
+  .motivation-grid,
+  .wings-row {
     grid-template-columns: 1fr;
   }
 
   .card {
     padding: 20px 18px;
   }
+
+  .center-badge-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
+
